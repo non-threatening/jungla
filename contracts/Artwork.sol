@@ -2,8 +2,9 @@
 pragma solidity 0.8.4; 
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Artwork is ERC721 {
+contract Artwork is ERC721, Ownable {
 
     uint256 public tokenCounter;
     mapping (uint256 => string) private _tokenURIs;
@@ -15,7 +16,7 @@ contract Artwork is ERC721 {
         tokenCounter = 0;
     }
 
-    function mint(string memory _tokenURI) public {
+    function mint(string memory _tokenURI) public onlyOwner {
         _safeMint(msg.sender, tokenCounter);
         _setTokenURI(tokenCounter, _tokenURI);
 
