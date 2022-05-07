@@ -1,14 +1,14 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Artwork Smart Contract Tests", function () {
+describe("Junglade Smart Contract Tests", function () {
   let artwork;
 
   this.beforeEach(async function () {
     // This is executed before each test
     // Deploying the smart contract
-    const Artwork = await ethers.getContractFactory("Artwork");
-    artwork = await Artwork.deploy("Artwork Contract", "ART");
+    const Junglade = await ethers.getContractFactory("Junglade");
+    artwork = await Junglade.deploy("Junglade Contract", "ART");
   });
 
   it("NFT is minted successfully", async function () {

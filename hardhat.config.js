@@ -11,14 +11,14 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 });
 
 task("deploy", "Deploy the smart contracts", async (taskArgs, hre) => {
-  const Artwork = await hre.ethers.getContractFactory("Artwork");
-  const artwork = await Artwork.deploy("Artwork Contract", "ART");
+  const Junglade = await hre.ethers.getContractFactory("Junglade");
+  const artwork = await Junglade.deploy("Junglade Contract", "ART");
 
   await artwork.deployed();
 
   await hre.run("verify:verify", {
     address: artwork.address,
-    constructorArguments: ["Artwork Contract", "ART"],
+    constructorArguments: ["Junglade Contract", "ART"],
   });
 });
 
