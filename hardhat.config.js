@@ -12,18 +12,18 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 task("deploy", "Deploy the smart contracts", async (taskArgs, hre) => {
   const Junglade = await hre.ethers.getContractFactory("Junglade");
-  const artwork = await Junglade.deploy("Junglade Contract", "ART");
+  const artwork = await Junglade.deploy("Junglade Members Only", "ART");
 
   await artwork.deployed();
 
   await hre.run("verify:verify", {
     address: artwork.address,
-    constructorArguments: ["Junglade Contract", "ART"],
+    constructorArguments: ["Junglade Members Only", "ART"],
   });
 });
 
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.9",
   networks: {
     mumbai: {
       // url: "https://matic-testnet-archive-rpc.bwarelabs.com",

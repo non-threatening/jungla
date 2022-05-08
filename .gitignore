@@ -9,4 +9,7 @@ thing.txt
 #Hardhat files
 cache
 artifacts
+
+images
 metadata
+*.car
