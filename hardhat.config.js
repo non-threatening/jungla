@@ -30,8 +30,12 @@ module.exports = {
       url: "https://matic-mumbai.chainstacklabs.com",
       accounts: [process.env.PRIVATE_KEY],
     },
+    rinkeby: {
+      url: "https://eth-rinkeby.alchemyapi.io/v2/0fP3WTlyJac9nbGvIOmF5IAKOyZ5uirQ",
+      accounts: [process.env.PRIVATE_KEY],
+    },
   },
   etherscan: {
-    apiKey: process.env.POLYGONSCAN_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
