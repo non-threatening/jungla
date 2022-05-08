@@ -23,6 +23,13 @@ contract Junglade is ERC721, Ownable {
         tokenCounter++;
     }
 
+      function mintTo(address recipient, string memory _tokenURI) public onlyOwner {
+          _safeMint(recipient, tokenCounter);
+        _setTokenURI(tokenCounter, _tokenURI);
+
+        tokenCounter++;
+      }
+
     function _setTokenURI(uint256 _tokenId, string memory _tokenURI) internal virtual {
         require(
             _exists(_tokenId),
